@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+  <nav class="d-flex jutify-content-between navbar navbar-light bg-light shadow">
+    <a href="/">
+      <img src="https://www.unir.net/wp-content/uploads/2020/03/logo-horizontal-1536x925.png" class="logo">
+    </a>
+    Herramientas de Visualización
+  </nav>
+
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-md-3">
+        <h4>Graficos con D3 (I)</h4>
+        <p>Modificaciones:</p>
+        <ul>
+          <li>Ejercicio 04-edificios tomado como ejemplo</li>
+          <li>Se agrego el eje x con los nombres de las torres</li>
+          <li>Se agrego el eje y agregando la escala de 0 a 900 metros</li>
+          <li>Se añadieron la cantidad en metros dentro de cada barra</li>
+          <li>Se le adapto el ancho de cada barra para que se mostraran en el grafico</li>
+          <li>Degradado de colores para las barras (mayor altura azul fuerte - menor altura azul claro)</li>
+        </ul>
+      </div>
+
+      <div class="col-md-9">
+        <div id="graf" class="vizprev">
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <script src="/js/d3.js"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <script src="https://d3js.org/d3-scale-chromatic.v1.min.js"></script>
+
+  <script src="barras.js">
+    
+  </script>
+
+</body>
+</html>
