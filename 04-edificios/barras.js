@@ -13,6 +13,8 @@ paddingx = 279
 ancho = ancho_total - margins.left - margins.right
 alto  = alto_total - margins.top - margins.bottom
 
+anchogrid = ancho - margins.right
+
 // II. Variables globales
 svg = graf.append('svg')
           .style('width', `${ ancho_total }px`)
@@ -33,11 +35,13 @@ dataArray = []
 function render(data) {
   
   var myColor = d3.scaleLinear().domain([0, maxy])
-        .range(["#BFBFBB", "#0966B3"]);
+        .range(['#BFBFBB', '#0966B3']);
 
   var yTextPadding = 20;
 
   svg.append('g');
+
+  var numberOfTicks = 6;
   
   // EJE X
 
@@ -56,10 +60,10 @@ function render(data) {
     .attr('transform', 'translate(35,'+ alto+')')
     .call(xAxis)
     .selectAll('text')
-      .attr("dx", '09px')
+      .attr('dx', '09px')
       .attr('transform', 'rotate(90)')
       //.attr('transform', 'translate(0,1)')
-      .style("text-anchor", "start")
+      .style('text-anchor', 'start')
       //.style('le')
       ;
 
@@ -72,23 +76,35 @@ function render(data) {
     
   yAxis = d3.axisLeft(yScale);
 
-  g.append("text")
-       .attr("class", "y label")
-       .attr("text-anchor", "middle")
+  g.append('text')
+       .attr('class', 'y label')
+       .attr('text-anchor', 'middle')
        .attr('x', -alto/2)
-       .attr("y", 1)
-       .attr("dy", ".1em")
-       .attr("transform", "rotate(-90)")
-       .attr("font-size" , "12px")
-       .text("Altura (metros)");
+       .attr('y', 1)
+       .attr('dy', '.1em')
+       .attr('transform', 'rotate(-90)')
+       .attr('font-size' , '12px')
+       .text('Altura (metros)');
 
   g.append('g')
     .attr('class', 'y axis')
     .attr('transform', 'translate(' + 35 + ',0)')
     .call(yAxis);
-  //Barras
+  
+  // GRID EJE Y
 
-          
+  var yAxisGrid = yAxis.ticks(10)
+                       .attr('class', 'yGrid')
+                       .tickSize(ancho, 0)
+                       .tickFormat('');
+                       //.orient('right');
+
+  g.append('g')
+   .attr('transform', 'translate(' + ancho_total + ',0)')
+   .call(yAxisGrid);
+
+  // BARRAS
+
   bars = g.selectAll('rect')
           .data(data);
 
@@ -100,19 +116,20 @@ function render(data) {
       .style('y', d => (yScale(d.oficial))) //modificar alto de barra
       .attr('fill', function(d){return myColor(d.oficial)});
   
-  //Numero dentro de las barras
+       
+  // NUMERO DENTRO DE LAS BARRAS
 
   bars.enter()
       .append('text')
       .text(function(d) { return d.oficial})
       //.attr('transform', 'rotate(90)')
-      .attr("x", function(d){return xScale(d.edificio)+20})
-      .attr("y", d => (yScale(d.oficial)) + 'px')
-      .attr("font-family" , "sans-serif")
-      .attr("font-size" , "7px")
-      .attr("fill" , "white")
-      .attr("dy", '09px')
-      .attr("text-anchor", "start");
+      .attr('x', function(d){return xScale(d.edificio)+20})
+      .attr('y', d => (yScale(d.oficial)) + 'px')
+      .attr('font-family' , 'sans-serif')
+      .attr('font-size' , '7px')
+      .attr('fill' , 'white')
+      .attr('dy', '09px')
+      .attr('text-anchor', 'start');
       
    console.log(alto);
 }
