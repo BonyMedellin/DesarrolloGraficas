@@ -94,7 +94,7 @@ function render(data) {
   // GRID EJE Y
 
   var yAxisGrid = yAxis.ticks(10)
-                       .attr('class', 'yGrid')
+                       //.attr('class', 'yGrid')
                        .tickSize(ancho, 0)
                        .tickFormat('');
                        //.orient('right');
