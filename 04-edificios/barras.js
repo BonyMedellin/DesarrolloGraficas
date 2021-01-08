@@ -2,12 +2,12 @@
 graf = d3.select('#graf')
 
 ancho_total = graf.style('width').slice(0, -2)
-alto_total = ancho_total * 9 / 16
+alto_total = ancho_total * 9 / 15
 
 graf.style('width', `${ ancho_total }px`)
     .style('height', `${ alto_total }px`)
 
-margins = { top: 10, left: 15, right: 15, bottom: 100 }
+margins = { top: 10, left: 15, right: 15, bottom: 200 }
 padding = 20
 paddingx = 279
 ancho = ancho_total - margins.left - margins.right
