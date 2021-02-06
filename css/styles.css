@@ -16,3 +16,41 @@
   background-color: rgb(255, 254, 254);
   border: 1px solid rgb(214, 214, 214);
 }
+
+.axis {
+  font-size:14px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;}
+
+.tooltip {
+  font-family: Arial, Helvetica, sans-serif;
+  position: absolute;
+  width: auto;
+  height: auto;
+  background: none repeat scroll 0 0 rgb(8, 104, 156);
+  border: 0 none;
+  border-radius: 8px 8px 8px 8px;
+  box-shadow: -3px 3px 15px #141414;
+  color: rgb(252, 252, 252);
+  font: 14px Arial, Helvetica, sans-serif;
+  padding: 5px;
+  text-align: left;
+}
+
+.label {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size:14px;
+  font-weight: bold;
+  text-align: left;
+  text-transform: uppercase;
+  text-anchor: middle;}
+
+.legend {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size:13px;
+    font-weight: bold;
+    text-align: left;
+    text-transform: uppercase;
+    text-anchor: end;
+}
