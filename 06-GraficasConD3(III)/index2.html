@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=5.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <link rel="stylesheet" href="/06-GraficasConD3(III)/stylemaps.css">
+</head>
+<body>
+
+  <nav class="d-flex jutify-content-between navbar navbar-light bg-light shadow">
+    <a href="/">
+      <img src="https://www.unir.net/wp-content/uploads/2020/03/logo-horizontal-1536x925.png" class="logo">
+    </a>
+    Herramientas de Visualización
+  </nav>
+  <div id="body">
+    <h1>Grafica de Mapa</h1>
+    <p>La grafica muestra los Estados de Estados Unidos, el degradado del color muestra el nivel en que la población de dicho país uso las redes sociales para compartir alguna información acerca de 
+      las elecciones, como principales plataformas tenemos iOS de Apple y Android de Google, al momento de pasar el ratón por algún estado se muestra del lado derecho una gráfica donde muestra 5
+    categorías de edades y el valor de quien más uso las redes sociales, también muestra el porcentaje de la población que accedió desde cierto sistema operativo a publicar contenido en internet y
+    también muestra la población total del país</p>
+  </div>
+
+  <div id="mainInfo">
+    <div id="map">
+      <form id="radiobtns">
+        <input type="radio" name="candidate" value="iOS" id="radio1" checked><label for="radio1">iOS</label>
+        <input type="radio" name="candidate" value="Android" id="radio2"><label for="radio2">Android</label>
+      </form>
+    </div>
+    <div id="countyInfo">
+      <div id="hint">Select a State</div>
+      <div id="detail">
+        <span id="countyName" class="county-value"></span><br>
+        <table>
+          <tr>
+            <td>Smartphone Usage:</td>
+            <td>
+              <span id="vote" class="county-value"></span>
+            </td>
+          </tr>
+          <tr>
+            <td>Population(2014):</td>
+            <td>
+              <span id="population" class="county-value"></span>
+            </td>
+          </tr>
+        </table>
+        <div id="radar">
+        </div>
+      </div>
+    </div>
+  </div>
+
+    
+    <script src="//d3js.org/d3.v3.min.js" charset="utf-8"></script>
+    <script src="//d3js.org/topojson.v1.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script src="https://rawgit.com/tpreusse/radar-chart-d3/master/src/radar-chart.js"></script>
+
+  <script src="Mapa.js"></script>
+
+</body>
+</html>

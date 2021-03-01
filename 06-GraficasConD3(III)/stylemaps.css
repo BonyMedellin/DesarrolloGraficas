@@ -1,0 +1,180 @@
+.logo {
+    height: 100px;
+  }
+
+body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    background: #f5f5f5;
+    color: #4d4d4d;
+    font-weight: 100;
+  }
+  
+  h1 {
+    text-align: center;
+  }
+  
+  h3 {
+    text-align: center;
+    font-weight: 300;
+    color: #bbb;
+    margin-top: -20px;
+    margin-bottom: -30px;
+  }
+  
+  .counties {
+    cursor: pointer;
+    stroke: none;
+    fill: none;
+  }
+  
+  .states {
+    fill: none;
+    stroke: rgba(202, 199, 199, 0.911);
+    /*stroke: red;*/
+    stroke-linejoin: round;
+  }
+  
+  .q0-9 { fill:#83C3FF; }
+  .q1-9 { fill:#4DC3FF; }
+  .q2-9 { fill:#43ACE0; }
+  .q3-9 { fill:#388FBA; }
+  .q4-9 { fill:#307BA1; }
+  .q5-9 { fill:#2C6F91; }
+  .q6-9 { fill:#245C78; }
+  .q7-9 { fill:#20526B; }
+  .q8-9 { fill:#1E4C63; }
+  .q9-9 { fill:#183F52; }
+  
+  
+  #mainInfo {
+    position: center;
+    margin: 40px auto;
+    width: 1000px;
+    height: 500px;
+  /*   border: 1px solid lightgrey; */
+  }
+  
+  #map {
+    position: absolute;
+    width: 650px;
+    height: 500px;
+    border: 1px dotted lightgrey;
+    left: 100px;
+  }
+  
+  #countyInfo {
+    position: absolute;
+    width: 460px;
+    height: 500px;
+    border: 1px dotted lightgrey;
+    margin-left: 600px;
+  }
+  
+  #countyInfo > #detail {
+    padding: 10px;
+    font-size: 20px;
+    line-height: 180%;
+    /*display: inline;*/
+  }
+  
+  .county-value {
+    color: #0194d8;
+    font-weight: 400;
+  }
+  
+  #hint {
+    font-size: 30px;
+    margin-top: 200px;
+    text-align: center;
+    opacity: 0.7;
+    font-weight: 400;
+    display: inside;
+  }
+  
+  table {
+    width: 100%;
+    border: 1px rgb(4, 121, 175);
+  }
+  table td:nth-child(2) {
+    width: 70%;
+  }
+  table td:nth-child(2) {
+    width: 30%;
+  }
+  
+  #radiobtns {
+    position: absolute;
+    right: 10px;
+    font-size: 80%;
+    font-weight: 500;
+  }
+  
+  input[type=radio] {
+      display:none; 
+  }
+  input[type=radio] + label {
+      display:inline-block;
+      margin:10px 5px;
+      color: rgb(9, 131, 202);
+  }
+  
+  input[type=radio]:checked + label { 
+       text-decoration: underline;
+       color: #087c91fa;
+  }
+  
+  input[type=radio] + label {
+    -webkit-transition: color 0.5s;
+    -moz-transition: color 0.5s;
+    -o-transition: color 0.5s;
+    -ms-transition: color 0.5s;
+    transition: color 0.5s;
+  }
+  
+  .legend {
+    width: 100px;
+    height: 100px;
+    background-color: black;
+  }
+  
+  #radar {
+    /*border: 1px solid red;*/
+    width: 400px;
+    height: 300px;
+    margin: 50px auto 10px;
+    /*margin: auto;*/
+    bottom: 10px;
+    position: relative;
+  }
+  
+  /* radar */
+  .radar-chart .area {
+    fill-opacity: 0.7;
+  }
+  .radar-chart.focus .area {
+    fill-opacity: 0.3;
+  }
+  .radar-chart.focus .area.focused {
+    fill-opacity: 0.7;
+  }
+  .area.radarInfo, .radarInfo .circle {
+    fill: #0d4f63;
+    stroke: black;
+  }
+  
+  .radar-chart .legend.left {
+    font-size: 15px;
+    fill: rgb(0, 70, 136);
+  }
+  
+  .radar-chart .legend.right {
+    font-size: 15px;
+    margin: none;
+    /*position: right;*/
+    fill: rgb(0, 70, 136);
+  }
+  
+  .radar-chart .legend.middle {
+    font-size: 15px;
+    fill: rgb(0, 70, 136);
+  }
